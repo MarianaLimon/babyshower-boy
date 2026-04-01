@@ -1,0 +1,107 @@
+/* ===== SECCIÓN ===== */
+.fecha{
+  position: relative;
+  z-index: 2;
+  padding: 2px 20px 2px;
+  text-align: center;
+}
+
+/* ===== CONTENEDOR FECHA ===== */
+.fecha__container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: 0 auto 50px;
+  gap: 10px;
+}
+
+/* ===== COLUMNAS ===== */
+.fecha__col{
+  flex: 1;
+  text-align: center;
+}
+
+/* ===== LÍNEAS SOLO LADOS ===== */
+.fecha__col:not(.fecha__center) span{
+  display: block;
+  padding: 10px 0;
+  border-top: 1px solid #81b5f7;
+  border-bottom: 1px solid #81b5f7;
+  color: #81b5f7;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+}
+
+/* ===== CENTRO ===== */
+.fecha__center{
+  flex: 0.8;
+}
+
+.fecha__center h2{
+  font-size: 4rem;
+  margin: 0;
+  color: #81b5f7;
+  font-family: "Lobster", sans-serif;
+}
+
+.fecha__center p{
+  margin: 0;
+  letter-spacing: 4px;
+  color: #81b5f7;
+}
+
+/* ===== UBICACIÓN ===== */
+.fecha__ubicacion{
+  margin: 30px 0;
+  padding: 0 10px;
+}
+
+.fecha__ubicacion p{
+  color: #444;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ===== MAPA ===== */
+.fecha__mapa{
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.fecha__mapa iframe{
+  width: 100%;
+  height: 220px;
+  border: none;
+}
+
+/* ===== ANIMACIÓN SCROLL ===== */
+.fecha__container,
+.fecha__ubicacion,
+.fecha__mapa{
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== DELAYS ===== */
+.fecha__container.show{
+  transition-delay: 0.2s;
+}
+
+.fecha__ubicacion.show{
+  transition-delay: 0.5s;
+}
+
+.fecha__mapa.show{
+  transition-delay: 0.8s;
+}

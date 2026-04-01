@@ -1,0 +1,72 @@
+/* ===== RESET ===== */
+body{
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body{
+  overflow-x: hidden;
+}
+
+/* ===== FONDO GLOBAL ===== */
+.bg{
+  position: fixed;
+  inset: 0;
+  background-image: url("../assets/images/bg-vertical-boy.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 768px){
+  .bg{
+    background-image: url("../assets/images/bg-baby-boy.png");
+  }
+}
+
+/* ===== ANIMACIÓN RESPIRAR (SUAVE) ===== */
+@keyframes breathe {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* ===== CONEJITA ===== */
+.bunny{
+  position: fixed;
+  bottom: 10px;
+  right: 0px;
+  width: 17rem;
+  z-index: 10; /* 👈 BAJAMOS para que no tape */
+  animation: breathe 4s ease-in-out infinite; /* 👈 más elegante */
+  transition: all 0.4s ease;
+  pointer-events: none; /* 👈 no bloquea clicks */
+}
+
+/* ===== ESTADO SCROLL ===== */
+.bunny.small{
+  width: 13rem; /* 👈 CAMBIO CLAVE (no usar scale) */
+  bottom: 7px;
+  right: 0px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 768px){
+  .bunny{
+    width: 420px;
+  }
+}
+
+
+
+.gift-lottie{
+  width: 150px;
+  margin: 0 auto 20px;
+}
+
+/* 👇 aquí está la magia */
+.gift-lottie svg{
+  filter: hue-rotate(320deg) saturate(1.2);
+}

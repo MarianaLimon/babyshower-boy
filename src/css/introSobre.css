@@ -1,0 +1,115 @@
+/* CONTENEDOR GENERAL */
+.intro {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, #e6f0ff, #cfe2ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 999;
+}
+
+/* SOBRE */
+.envelope {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 2200px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* BASE */
+.base {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 55%;
+  background: #dbe9ff;
+
+  box-shadow:
+    0 -20px 40px rgba(129,181,247,0.25),
+    inset 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* SOLAPA */
+.flap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 55%;
+  background: #bcd3ff;
+
+  clip-path: polygon(0 0, 50% 95%, 100% 0);
+
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(.65,.05,.36,1);
+
+  box-shadow:
+    inset 0 -40px 80px rgba(0,0,0,0.12),
+    0 50px 90px rgba(129,181,247,0.35);
+
+  z-index: 5;
+}
+
+/* APERTURA */
+.open .flap {
+  transform: rotateX(-150deg);
+}
+
+/* SELLO */
+.seal {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10rem;
+  cursor: pointer;
+  z-index: 10;
+
+  filter: drop-shadow(0 20px 30px rgba(129,181,247,0.6));
+
+  transition: transform 0.4s ease, opacity 0.5s ease;
+}
+
+.seal:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* DESAPARECE */
+.open .seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.85);
+}
+
+/* TEXTO */
+.text {
+  position: absolute;
+  bottom: 50px;
+  font-size: 16px;
+  color: #5f8fd9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+
+  .envelope {
+    width: 160vw;
+    height: 100vh;
+  }
+
+  .flap {
+    height: 41rem;
+    width: 65rem;
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: polygon(0 0, 50% 65%, 100% 0);
+  }
+
+  .open .flap {
+    transform: translateX(-50%) rotateX(-150deg);
+  }
+
+}

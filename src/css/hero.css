@@ -1,0 +1,111 @@
+/* ===== HERO BASE ===== */
+.hero{
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ===== CONTENIDO ===== */
+.hero__content{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 100px 20px 40px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ===== TITULO ===== */
+.hero__title{
+  font-family: "Great Vibes", cursive;
+  color: #81b5f7;
+  font-size: 4rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero__title span{
+  font-family: "Great Vibes", cursive;
+  font-weight: 600;
+}
+
+/* ===== TEXTOS ===== */
+.hero__mi{
+  font-family: "Great Vibes", cursive;
+  color: #9d9d9d;
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+
+.hero__name{
+  font-family: "Lobster", sans-serif;
+  font-size: 2.8rem;
+  margin: 10px 0;
+  color: #8BCEF7;
+}
+
+.hero__subtitle{
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 2rem;
+  color: #9d9d9d;
+}
+
+/* ===== FADE IN ===== */
+.fade-in{
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp{
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== DELAYS ===== */
+.delay-1{ animation-delay: 0.3s; }
+.delay-2{ animation-delay: 0.6s; }
+.delay-3{ animation-delay: 0.9s; }
+.delay-4{ animation-delay: 1.2s; }
+.delay-5{ animation-delay: 1.5s; }
+
+/* ===== FLECHA ===== */
+.scroll-indicator{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  color: #81b5f7; /* más contraste */
+  z-index: 20; /* arriba de TODO */
+  animation: bounce 1.5s infinite;
+  text-shadow: 0 0 10px rgba(255, 175, 189, 0.6);
+}
+
+@keyframes bounce{
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 768px){
+
+  .hero__content{
+    margin-top: 2rem;
+  }
+
+  .hero__mi{
+    font-size: 1.5rem;
+  }
+
+  .hero__title{
+    font-size: 5rem;
+  }
+
+  .hero__name{
+    font-size: 5rem;
+  }
+}
